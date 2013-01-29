@@ -1,0 +1,82 @@
+html,
+body,
+div,
+pre {
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	
+}
+
+ul {
+	list-style-type: none;
+	width: 500px;
+	margin: 20px auto;
+}
+
+ul li {
+	margin: 120px 0;
+}
+
+.type {
+	float: left;
+	font: 20px Helvetica, sans-serif;
+	color: #0081C2;
+}
+
+.transform {
+	float: right;
+	font: 18px Helvetica, sans-serif;
+	border: 4px solid red;
+	width: 350px;
+}
+
+.clearfix:after {
+	visibility: hidden;
+	display: block;
+	font-size: 0;
+	content: " ";
+	clear: both;
+	height: 0;
+	}
+
+* html .clearfix             { zoom: 1; } /* IE6 */
+
+*:first-child+html .clearfix { zoom: 1; } /* IE7 */
+
+/*位移
+	-webkit-transform: translateX(20px);
+	-webkit-transform: translateY(18px);
+	-webkit-transform: translateY(1%);
+*/
+.translate {
+	-webkit-transform: translate(70px, 20px); 	
+}
+
+/*not standard
+it equals to 
+-webkit-transform: skew(-31deg, 31deg)
+also 
+matrix(1,tan(31deg), tan(-31deg), 1, 1, 0)*/
+.matrix {
+	-webkit-transform: matrix(1, 0.6, -0.6, 1, 0, 0);
+}
+
+.rotate {
+	-webkit-transform: rotate(0.1turn);
+}
+
+.scale {
+	-webkit-transform-origin: 0 0;
+	-webkit-transform: scale(1.1, 0.5);
+}
+
+/*not standard
+-webkit-transform: skewX(30deg);
+	-webkit-transform: skewY(-10deg);
+*/
+.skew {
+	-webkit-transform: skew(-31deg, 31deg);
+	}
