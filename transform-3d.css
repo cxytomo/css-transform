@@ -1,0 +1,83 @@
+html,body,div,span {
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+	position: relative;
+	-webkit-perspective: 1200px;
+	-webkit-perspective-origin: 50% 50%;
+	width:300px;
+	height: 300px;
+	margin: 100px auto;
+}
+
+.box {
+	height: 100%;
+	width: 100%;
+	position: absolute;
+	-webkit-transform-style: preserve-3d;
+	-webkit-animation: spinbox 8s ease-in-out infinite;
+}
+
+@-webkit-keyframes spinbox {
+	from {
+		-webkit-transform: rotateX(0deg) rotateY(0deg);
+	}
+	to {
+		-webkit-transform: rotateX(360deg) rotateY(360deg);
+	}
+}
+
+/*
+对div用opacity，会使div的后代继承这个属性，这里的文字也会变得透明
+opacity: 0.5;
+IE
+filter: alpha(opacity=80);
+*/
+.box div {
+	font:  bold 100px Arial;
+	color: white;
+	position: absolute;
+	width: 300px;
+	height: 300px;
+	border: 1px solid black;
+}
+
+.box div span {
+	display: inline-block;
+	height: 100%;
+	width: 100%;
+	line-height: 300px;
+	text-align: center;
+}
+
+.box .front {
+	background-color: rgba(255,0,0,0.5);
+	-webkit-transform: translateZ(150px);
+}
+
+.box .back {
+	background-color: rgba(255,0,0,0.5);
+	-webkit-transform: translateZ(-150px) rotateY(180deg);
+}
+
+.box .left {
+	background-color: rgba(0,255,0,0.5);
+	-webkit-transform: translateX(-150px) rotateY(90deg);
+}
+
+.box .right {
+	background-color: rgba(0,255,0,0.5);
+	-webkit-transform: translateX(150px) rotateY(-90deg);
+}
+
+.box .up {
+	background-color: rgba(0,0,255,0.5);
+	-webkit-transform: translateY(-150px) rotateX(-90deg);
+}
+
+.box .down {
+	background-color: rgba(0,0,255,0.5);
+	-webkit-transform: translateY(150px) rotateX(90deg);
+}
